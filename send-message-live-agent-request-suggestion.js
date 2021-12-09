@@ -10,7 +10,7 @@ const PATH_TO_SERVICE_ACCOUNT_KEY = './service_account_key.json';
 const CONVERSATION_ID = 'EDIT_HERE';
 
 const businessmessages = require('businessmessages');
-const uuidv4 = require('uuid/v4');
+const uuidv4 = require('uuid').v4;
 const {google} = require('googleapis');
 
 // Initialize the Business Messages API

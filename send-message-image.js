@@ -11,7 +11,7 @@ const CONVERSATION_ID = 'EDIT_HERE';
 const IMAGE_FILE_URL = 'EDIT_HERE';
 
 const businessmessages = require('businessmessages');
-const uuidv4 = require('uuid/v4');
+const uuidv4 = require('uuid').v4;
 const {google} = require('googleapis');
 
 // Initialize the Business Messages API

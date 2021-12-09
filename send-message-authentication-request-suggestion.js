@@ -13,7 +13,7 @@ const OAUTH_CODE_CHALLENGE = 'EDIT_HERE';
 const OAUTH_SCOPE = 'EDIT_HERE';
 
 const businessmessages = require('businessmessages');
-const uuidv4 = require('uuid/v4');
+const uuidv4 = require('uuid').v4;
 const {google} = require('googleapis');
 
 // Initialize the Business Messages API

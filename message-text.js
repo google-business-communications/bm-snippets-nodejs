@@ -10,7 +10,7 @@ const PATH_TO_SERVICE_ACCOUNT_KEY = './service_account_key.json';
 const CONVERSATION_ID = 'EDIT_HERE';
 
 const businessmessages = require('businessmessages');
-const uuidv4 = require('uuid/v4');
+const uuidv4 = require('uuid').v4;
 const {google} = require('googleapis');
 
 // Initialize the Business Messages API
@@ -25,15 +25,16 @@ const scopes = [
 const privatekey = require(PATH_TO_SERVICE_ACCOUNT_KEY);
 
 /**
- * Posts a message a rich message to the Business Messages API.
+ * Posts a message to the Business Messages API.
  *
  * @param {string} conversationId The unique id for this user and agent.
+ * @param {string} message The message text to send the user.
  * @param {string} representativeType A value of BOT or HUMAN.
  */
 async function sendMessage(conversationId, message, representativeType) {
   const authClient = await initCredentials();
 
-  // Create the payload for sending a rich text message
+  // Create the payload for sending a message
   const apiParams = {
     auth: authClient,
     parent: 'conversations/' + conversationId,
@@ -42,9 +43,7 @@ async function sendMessage(conversationId, message, representativeType) {
       representative: {
         representativeType: representativeType,
       },
-      containsRichText: true, // Force this message to be processed as rich text
-      text: 'Hello, here is some **bold text**, *italicized text*, and a [link](https://www.google.com).',
-      fallback: 'Hello, check out this link https://www.google.com.'
+      text: message,
     },
   };
 
@@ -82,4 +81,4 @@ async function sendMessage(conversationId, message, representativeType) {
   });
 }
 
-sendMessage(CONVERSATION_ID, 'BOT');
+sendMessage(CONVERSATION_ID, 'This is a test message', 'BOT');
