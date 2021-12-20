@@ -1,4 +1,21 @@
+// Copyright 2021 Google LLC
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+
+//     https://www.apache.org/licenses/LICENSE-2.0
+
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
 /**
+ * This code sends a rich text to the user with a fallback text.
+ * Read more: https://developers.google.com/business-communications/business-messages/guides/how-to/message/send?hl=en#rich_text
+ *
  * This code is based on the https://github.com/google-business-communications/nodejs-businessmessages Node.js
  * Business Messages client library.
  */
@@ -25,7 +42,7 @@ const scopes = [
 const privatekey = require(PATH_TO_SERVICE_ACCOUNT_KEY);
 
 /**
- * Posts a message a rich message to the Business Messages API.
+ * Posts a rich text message using markdown to the Business Messages API.
  *
  * @param {string} conversationId The unique id for this user and agent.
  * @param {string} representativeType A value of BOT or HUMAN.
@@ -64,10 +81,10 @@ async function sendMessage(conversationId, message, representativeType) {
  async function initCredentials() {
   // configure a JWT auth client
   const authClient = new google.auth.JWT(
-      privatekey.client_email,
-      null,
-      privatekey.private_key,
-      scopes,
+    privatekey.client_email,
+    null,
+    privatekey.private_key,
+    scopes,
   );
 
   return new Promise(function(resolve, reject) {

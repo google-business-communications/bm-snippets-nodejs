@@ -26,7 +26,7 @@ You must have the following software installed on your machine:
 
 1. Locate the file with the code snippet you want to execute.
 1. Replace all the values of the constants on top of the file that are set to `EDIT_HERE`.
-1. Make sure the path to your [service account key](https://developers.google.com/business-communications/business-messages/guides/quickstarts/prerequisite-setup?hl=en#create_a_service_account) is correct. The scripts use a default path as `./service_account_key.json`.
+1. Make sure the path to your [service account key](https://developers.google.com/business-communications/business-messages/guides/quickstarts/prerequisite-setup?hl=en#create_a_service_account) is correct. The scripts use the default path as `./service_account_key.json`.
 1. On your terminal, run `node file-name-to-be-executed.js`
 
 ## Learn more
