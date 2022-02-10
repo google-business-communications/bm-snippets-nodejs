@@ -22,6 +22,14 @@ You must have the following software installed on your machine:
 1.  [Register with Business Messages](https://developers.google.com/business-communications/business-messages/guides/set-up/register).
 1.  Once registered, follow the instructions to [enable the APIs for your project](https://developers.google.com/business-communications/business-messages/guides/set-up/register#enable-api).
 
+## Installation
+
+Install the dependencies:
+
+```bash
+npm install
+```
+
 ## How to run the NodeJS scripts?
 
 1. Locate the file with the code snippet you want to execute.
