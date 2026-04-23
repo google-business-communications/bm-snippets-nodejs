@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "businessmessages": "1.0.3",
-    "googleapis": "92.0.0",
-    "uuid": "8.3.2"
+    "googleapis": "171.4.0",
+    "uuid": "14.0.0"
   }
 }
